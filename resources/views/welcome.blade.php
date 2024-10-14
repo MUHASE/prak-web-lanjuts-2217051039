@@ -38,7 +38,7 @@
                     </svg>
                 </div>
 
-                <h1 style="font-size: 40pt;" class="text-center mt-6 text-xl font-semibold text-gray-900 dark:text-white">Muhammad Haris Setiawan - 2217051039</h1>
+                <h1 style="font-size: 20pt;" class="text-center mt-6 text-xl font-semibold text-gray-900 dark:text-white">Muhammad Haris Setiawan - 2217051039</h1>
 
                 <div class="mt-16">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
