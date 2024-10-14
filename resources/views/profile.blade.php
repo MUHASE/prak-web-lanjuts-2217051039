@@ -79,7 +79,7 @@
     <div class="info">
         <div class="label">{{ $nama }}</div>
         <div class="label">{{ $npm }}</div>
-        <div class="label">{{ $kelas }}</div>
+        <div class="label">{{ $nama_kelas }}</div>
     </div>
 </div>
 

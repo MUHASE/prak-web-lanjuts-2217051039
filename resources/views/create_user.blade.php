@@ -36,8 +36,17 @@
             text-align: left;
         }
 
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
         input[type="text"] {
-            width: 100%;
+            width: 95%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -60,6 +69,39 @@
         input[type="submit"]:hover {
             background-color: #e69500;
         }
+
+        .input-invalid {
+            border-color: blue;
+            background-color: #f0f8ff;
+        }
+
+        .pesan-error {
+            color: blue;
+            font-size: 14px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        select {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        
+            
+        }
+
+        select.input-invalid {
+            border-color: blue;
+            background-color: #f0f8ff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -69,12 +111,31 @@
         @csrf
         <h1>Create User</h1>
         <label for="nama">Nama:</label>
-        <input type="text" id="nama" name="nama" required>
-        <label for="npm">NPM:</label>
-        <input type="text" id="npm" name="npm" required>
-        <label for="kelas">Kelas:</label>
-        <input type="text" id="kelas" name="kelas" required>
-        <input type="submit" value="Submit">
+            <input type="text" id="nama" name="nama" value="{{ old('nama') }}" class="@error('nama') input-invalid @enderror">
+            @error('nama')
+                <div class="pesan-error">{{ $message }}</div>
+            @enderror
+
+            <label for="npm">NPM:</label>
+            <input type="text" id="npm" name="npm" value="{{ old('npm') }}" class="@error('npm') input-invalid @enderror">
+            @error('npm')
+                <div class="pesan-error">{{ $message }}</div>
+            @enderror
+
+            <label for="kelas_id">Kelas:</label>
+            <select name="kelas_id" id="kelas_id" class="@error('kelas_id') input-invalid @enderror">
+                <option value="">Pilih Kelas</option>
+                @foreach ($kelas as $kelasItem)
+                    <option value="{{ $kelasItem->id }}" {{ old('kelas_id') == $kelasItem->id ? 'selected' : '' }}>
+                        {{ $kelasItem->nama_kelas }}
+                    </option>
+                @endforeach
+            </select>
+            @error('kelas_id')
+                <div class="pesan-error">{{ $message }}</div>
+            @enderror
+
+            <input type="submit" value="Submit">
     </form>
 </div>
 
