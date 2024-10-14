@@ -6,7 +6,7 @@
     <title>Styled Card</title>
     <style>
         body {
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            background: linear-gradient(135deg, #ff7e5f, #f8b85e);
             height: 100vh;
             display: flex;
             justify-content: center;
