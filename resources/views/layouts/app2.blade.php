@@ -15,6 +15,20 @@
             font-family: Arial, sans-serif;
         }
 
+        .btn-kembali {
+            display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 0.75rem 1.5rem;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        margin: 0.5rem 0;
+        transition: background-color 0.3s ease;
+        background-color: #ff7e5f;
+        }
+
         .card {
             background-color: rgba(0, 0, 0, 0.5);
             border-radius: 25px;
